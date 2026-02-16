@@ -27,5 +27,6 @@ public class PatientTests {
     public void testTransactionMethods(){
         Patient patient = patientService.getPatientById(1L);
         System.out.println(patient);
+
     }
 }

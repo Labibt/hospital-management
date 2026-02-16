@@ -17,6 +17,7 @@ public class PatientService {
     public Patient getPatientById(Long id){
         Patient p1 = patientRepository.findById(id).orElseThrow();
         Patient p2 = patientRepository.findById(id).orElseThrow();
+        p1.setName("labibs");
         return p1;
     }
 }
