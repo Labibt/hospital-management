@@ -1,5 +1,6 @@
 package com.example.hospital_management;
 
+import com.example.hospital_management.entity.BloodGroup;
 import com.example.hospital_management.entity.Patient;
 import com.example.hospital_management.service.PatientService;
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,9 @@ public class PatientTests {
 //        Patient patient = patientService.getPatientById(1L);
 //        System.out.println(patient);
 
-        List<Patient> patientList = patientRepository.findByBirthDateOrEmail("1990-5-12", "alice.smith@example.com");
+        //List<Patient> patientList = patientRepository.findByBirthDateOrEmail(LocalDate.of(1990, 1, 1), "alice.smith@example.com");
+
+        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroup.A_POSITIVE);
         for(Patient patient: patientList){
             System.out.println(patient);
         }
