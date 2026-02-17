@@ -37,8 +37,10 @@ public class PatientTests {
 //            System.out.println(patient);
 //        }
 
-        int rowsUpdated = patientRepository.updateNameWithId(1L, "labibs");
-        System.out.println("Rows updated: " + rowsUpdated);
+//        int rowsUpdated = patientRepository.updateNameWithId(1L, "labibs");
+//        System.out.println("Rows updated: " + rowsUpdated);
+
+
     }
 
 

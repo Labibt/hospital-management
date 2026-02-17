@@ -1,5 +1,6 @@
 package com.example.hospital_management.repository;
 
+import com.example.hospital_management.dto.BloodGroupCountResponse;
 import com.example.hospital_management.entity.BloodGroup;
 import com.example.hospital_management.entity.Patient;
 import jakarta.transaction.Transactional;
@@ -22,6 +23,8 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select p from Patient p where p.bloodGroup = :bloodGroup")
     List<Patient> findByBloodGroup(@Param("bloodGroup") BloodGroup bloodGroup);
 
+    @Query("select new com.example.hospital_management.dto.BloodGroupCountResponse(p.bloodGroup, count(p)) from Patient p group by p.bloodGroup")
+    List<BloodGroupCountResponse> bloodGroupCount();
 
     @Modifying
     @Query("update Patient p set p.name = :name where p.id = :id")
