@@ -1,5 +1,6 @@
 package com.example.hospital_management;
 
+import com.example.hospital_management.dto.BloodGroupCountResponse;
 import com.example.hospital_management.entity.BloodGroup;
 import com.example.hospital_management.entity.Patient;
 import com.example.hospital_management.service.PatientService;
@@ -40,7 +41,10 @@ public class PatientTests {
 //        int rowsUpdated = patientRepository.updateNameWithId(1L, "labibs");
 //        System.out.println("Rows updated: " + rowsUpdated);
 
-
+        List<BloodGroupCountResponse> bloodGroupList = patientRepository.bloodGroupCount();
+        for(BloodGroupCountResponse bloodGroupCountResponse: bloodGroupList){
+            System.out.println(bloodGroupCountResponse);
+        }
     }
 
 

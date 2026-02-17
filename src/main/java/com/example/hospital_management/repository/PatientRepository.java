@@ -26,6 +26,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select new com.example.hospital_management.dto.BloodGroupCountResponse(p.bloodGroup, count(p)) from Patient p group by p.bloodGroup")
     List<BloodGroupCountResponse> bloodGroupCount();
 
+    @Transactional
     @Modifying
     @Query("update Patient p set p.name = :name where p.id = :id")
     int updateNameWithId( @Param("id") Long id, @Param("name") String name);
