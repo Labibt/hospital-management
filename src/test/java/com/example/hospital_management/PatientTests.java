@@ -32,10 +32,13 @@ public class PatientTests {
 
         //List<Patient> patientList = patientRepository.findByBirthDateOrEmail(LocalDate.of(1990, 1, 1), "alice.smith@example.com");
 
-        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroup.A_POSITIVE);
-        for(Patient patient: patientList){
-            System.out.println(patient);
-        }
+//        List<Patient> patientList = patientRepository.findByBloodGroup(BloodGroup.A_POSITIVE);
+//        for(Patient patient: patientList){
+//            System.out.println(patient);
+//        }
+
+        int rowsUpdated = patientRepository.updateNameWithId(1L, "labibs");
+        System.out.println("Rows updated: " + rowsUpdated);
     }
 
 
