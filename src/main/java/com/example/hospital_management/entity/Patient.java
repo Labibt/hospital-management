@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-@Table(name = "patient_tbl",
+@Table(
         uniqueConstraints = {
             @UniqueConstraint(name = "unique_name_birthdate", columnNames = {"name", "birth_date"})
         },

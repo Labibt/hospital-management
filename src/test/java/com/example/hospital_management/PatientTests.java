@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import com.example.hospital_management.repository.PatientRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootTest
@@ -25,8 +26,14 @@ public class PatientTests {
 
     @Test
     public void testTransactionMethods(){
-        Patient patient = patientService.getPatientById(1L);
-        System.out.println(patient);
+//        Patient patient = patientService.getPatientById(1L);
+//        System.out.println(patient);
 
+        List<Patient> patientList = patientRepository.findByBirthDateOrEmail("1990-5-12", "alice.smith@example.com");
+        for(Patient patient: patientList){
+            System.out.println(patient);
+        }
     }
+
+
 }
