@@ -31,4 +31,7 @@ public class Insurance {
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToOne(mappedBy = "insurance")
+    private Patient patient;
 }
