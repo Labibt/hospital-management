@@ -23,7 +23,7 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("select p from Patient p where p.bloodGroup = :bloodGroup")
     List<Patient> findByBloodGroup(@Param("bloodGroup") BloodGroup bloodGroup);
 
-    @Query("select new com.example.hospital_management.dto.BloodGroupCountResponse(p.bloodGroup, count(p)) from Patient p group by p.bloodGroup")
+    @Query("select p.bloodGroup as bloodGroup, count(p) as count from Patient p group by p.bloodGroup")
     List<BloodGroupCountResponse> bloodGroupCount();
 
     @Transactional

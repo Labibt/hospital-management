@@ -41,10 +41,10 @@ public class PatientTests {
 //        int rowsUpdated = patientRepository.updateNameWithId(1L, "labibs");
 //        System.out.println("Rows updated: " + rowsUpdated);
 
-        List<BloodGroupCountResponse> bloodGroupList = patientRepository.bloodGroupCount();
-        for(BloodGroupCountResponse bloodGroupCountResponse: bloodGroupList){
-            System.out.println(bloodGroupCountResponse);
-        }
+//        List<BloodGroupCountResponse> bloodGroupList = patientRepository.bloodGroupCount();
+//        for(BloodGroupCountResponse bloodGroupCountResponse: bloodGroupList){
+//            System.out.println(bloodGroupCountResponse);
+//        }
     }
 
 
